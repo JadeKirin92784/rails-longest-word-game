@@ -20,7 +20,7 @@ class GamesController < ApplicationController
     if pass_grid_check?(@guess, @letters)
       @result = hit_api(response, @end_time - @start_time, @guess)
     else
-      @result = { time: 0, score: 0, message: "Sorry, but #{@guess} can't be built out of #{@letters}" }
+      @result = { time: 0, score: 0, message: "Sorry, but #{@guess.capitalize} can't be built out of #{@letters}" }
     end
 
   end
@@ -33,9 +33,9 @@ class GamesController < ApplicationController
 
   def hit_api(response, time_elasped, attempt)
     if response["found"]
-      result = { time: time_elasped, score: attempt.length / time_elasped, message: "Congratulations! #{@guess} is a value English word!" }
+      result = { time: time_elasped, score: attempt.length / time_elasped, message: "Congratulations! #{@guess.capitalize} is a value English word!" }
     else
-      result = { time: time_elasped, score: 0, message: "Sorry, but #{@guess} does not seem to be a valid English word..." }
+      result = { time: time_elasped, score: 0, message: "Sorry, but #{@guess.capitalize} does not seem to be a valid English word..." }
     end
     return result
   end

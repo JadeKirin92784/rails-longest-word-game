@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>RESULT</h1>
+
+    <p> Guess: <%=@guess%></p>
+
+    <p> Original Letters: <%=@letters%></p>
+
+    <p> Time: <%=@result[:time]%></p>
+
+    <p> Score: <%=@result[:score]%></p>
+
+    <p><%=@result[:message]%></p>
+
+    <%= link_to 'Play again', new_path %>
+</div>

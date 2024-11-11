@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   def pass_grid_check?(attempt, grid)
     attempt_chars = attempt.downcase.chars
     grid_chars = grid.join.downcase.chars
-    return attempt_chars.all? { |char| grid_chars.count(char) >= attempt_chars.count(char) }
+    attempt_chars.all? { |char| grid_chars.count(char) >= attempt_chars.count(char) }
   end
 
   def hit_api(response, time_elasped, attempt)

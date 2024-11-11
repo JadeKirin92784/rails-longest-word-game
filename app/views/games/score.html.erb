@@ -5,9 +5,9 @@
 
     <p> Original Letters: <%=@letters%></p>
 
-    <p> Time: <%=@result[:time]%></p>
+    <p> Time: <%=@result[:time].floor%> milliseconds</p>
 
-    <p> Score: <%=@result[:score]%></p>
+    <p> Score: <%=(@result[:score]*10).floor%></p>
 
     <p><%=@result[:message]%></p>
 

@@ -33,7 +33,7 @@ class GamesController < ApplicationController
 
   def hit_api(response, time_elasped, attempt)
     if response["found"]
-      result = { time: time_elasped, score: attempt.length / time_elasped, message: "Congratulations! #{@guess.capitalize} is a value English word!" }
+      result = { time: time_elasped, score: attempt.length / time_elasped, message: "Congratulations! #{@guess.capitalize} is a valid English word!" }
     else
       result = { time: time_elasped, score: 0, message: "Sorry, but #{@guess.capitalize} does not seem to be a valid English word..." }
     end

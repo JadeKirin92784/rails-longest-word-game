@@ -18,6 +18,7 @@ class GamesController < ApplicationController
     @result = {}
 
     if pass_grid_check?(@guess, @letters)
+      
       @result = hit_api(response, @end_time - @start_time, @guess)
     else
       @result = { time: 0, score: 0, message: "Sorry, but #{@guess.capitalize} can't be built out of #{@letters}" }
